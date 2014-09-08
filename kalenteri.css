@@ -1,0 +1,62 @@
+.kalenteri {
+  font-family: Helvetica, sans-serif;
+  max-width: 700px;
+}
+
+.kalenteri-controls a, .kalenteri-controls span {
+  display: inline-block;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.kalenteri-controls a {
+  width: 30%;
+  cursor: pointer;
+  background: #eee;
+}
+
+.kalenteri-controls span {
+  width: 40%;
+}
+
+.kalenteri-head {
+  width: calc(100% / 7);
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  border-top: 1px solid #ddd;
+}
+
+.kalenteri-day {
+  width: calc(100% / 7);
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 2% 0;
+
+  text-align: center;
+  border: 1px solid #ddd;
+  background: #eee;
+  color: black;
+}
+
+.kalenteri-day:hover {
+  background: #ddd;
+  cursor: pointer;
+}
+
+.kalenteri-day-selected {
+  background: #ded;
+}
+
+.kalenteri-day-selected:hover {
+  background: #cdc;
+}
+
+.kalenteri-day-prev-month {
+  background: white;
+  color: grey;
+}
+
+.kalenteri-day-next-month {
+  display: none;
+}
