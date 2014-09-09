@@ -23,9 +23,9 @@ var Controls = React.createClass({
   render: function() {
     return (
       React.DOM.div({className: 'kalenteri-controls'},
-        React.DOM.a({onClick: this.props.onPrevious}, 'Previous'),
+        React.DOM.a({onClick: this.props.onPrevious}, '‹'),
         React.DOM.span(null, this.props.date.format('MMMM YYYY')),
-        React.DOM.a({onClick: this.props.onNext}, 'Next')
+        React.DOM.a({onClick: this.props.onNext}, '›')
       )
     );
   }

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 
-<link rel="stylesheet" href="../kalenteri.css" />
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../kalenteri.css" />
+</head>
 
-<div id="kalenteri-demo"></div>
+<body>
+  <div id="kalenteri-demo"></div>
 
-<script src="react-with-addons.js"></script>
-<script src="moment.js"></script>
-<script src="../kalenteri.js"></script>
-<script>
-  React.renderComponent(Kalenteri({}), document.getElementById('kalenteri-demo'));
-</script>
+  <script src="react-with-addons.js"></script>
+  <script src="moment.js"></script>
+  <script src="../kalenteri.js"></script>
+  <script>
+    React.renderComponent(Kalenteri({}), document.getElementById('kalenteri-demo'));
+  </script>
+</body>

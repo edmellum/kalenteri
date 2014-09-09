@@ -6,17 +6,17 @@
 .kalenteri-controls a, .kalenteri-controls span {
   display: inline-block;
   text-align: center;
-  padding: 5px 0;
 }
 
 .kalenteri-controls a {
-  width: 30%;
+  width: calc(100% / 7);
+  padding: 10px 0;
   cursor: pointer;
-  background: #eee;
+  font-size: 20px
 }
 
 .kalenteri-controls span {
-  width: 40%;
+  width: calc(100% / 1.4);
 }
 
 .kalenteri-head-day, .kalenteri-head-month {
@@ -38,8 +38,8 @@
 
 .kalenteri-head-day {
   width: calc(100% / 7);
-  font-size: 16px;
-  padding: 10px 0;
+  font-size: 14px;
+  padding: 5px 0;
   border-top: 1px solid #ddd;
 }
 
@@ -84,5 +84,9 @@
   }
   .kalenteri-head-month {
     display: inline-block;
+  }
+  .kalenteri-head-day {
+    font-size: 16px;
+    padding: 10px 0;
   }
 }
