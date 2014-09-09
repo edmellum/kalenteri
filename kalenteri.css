@@ -78,6 +78,14 @@
   color: grey;
 }
 
+.kalenteri-day-prev-month:hover, .kalenteri-day-next-month:hover {
+  background: #fafafa;
+}
+
+.kalenteri-day-prev-month.kalenteri-day-selected, .kalenteri-day-next-month.kalenteri-day-selected {
+  background: #eee;
+}
+
 @media(min-width: 500px) {
   .kalenteri-controls {
     display: none;
