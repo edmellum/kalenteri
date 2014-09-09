@@ -33,12 +33,24 @@ var Controls = React.createClass({
 
 var Header = React.createClass({
   render: function() {
-    var headers = Array.apply(null, {length: 7}).map(function(n, i) {
-      return React.DOM.div({className: 'kalenteri-head'}, moment().weekday(i).format('ddd'));
+    var months = moment.monthsShort().map(function(month, i) {
+      var classes = React.addons.classSet({
+        'kalenteri-head-month': true,
+        'kalenteri-head-active': this.props.date.month() === i
+      });
+
+      return React.DOM.div({className: classes, onClick: this.props.onMonthClick.bind(this, i)}, month);
+    }, this);
+
+    var days = Array.apply(null, {length: 7}).map(function(n, i) {
+      return React.DOM.div({className: 'kalenteri-head-day'}, moment().weekday(i).format('ddd'));
     });
 
     return (
-      React.DOM.div({className: 'kalenteri-header'}, headers)
+      React.DOM.div({className: 'kalenteri-header'},
+        React.DOM.div({className: 'kalenteri-header'}, months),
+        React.DOM.div({className: 'kalenteri-header'}, days)
+      )
     );
   }
 });
@@ -47,7 +59,8 @@ window.Kalenteri = React.createClass({
   getDefaultProps: function() {
     return {
       defaultDate: moment(),
-      multiple: true
+      multiple: true,
+      onSelect: function() {}
     };
   },
 
@@ -79,7 +92,13 @@ window.Kalenteri = React.createClass({
       });
     }
 
+    this.props.onSelect(date, active, selected);
+
     this.setState({selected: selected});
+  },
+
+  updateMonth: function(month) {
+    this.setState({date: moment(this.state.date).month(month)});
   },
 
   render: function() {
@@ -110,7 +129,7 @@ window.Kalenteri = React.createClass({
     return (
       React.DOM.div({className: 'kalenteri'},
         controls,
-        Header(),
+        Header({date: this.state.date, onMonthClick: this.updateMonth}),
         React.DOM.div(null, days)
       )
     );
